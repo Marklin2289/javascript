@@ -30,6 +30,16 @@ function writeToLog(
 
 function calculateResult(calculationType) {
   const enteredNumber = getUserNumberInput();
+  if (
+    (calculationType !== "ADD" &&
+      calculationType !== "SUBTRACT" &&
+      calculationType !== "MULTIPLY" &&
+      calculationType !== "DIVIDE") ||
+    !enteredNumber //not = 0
+  ) {
+    alert("cannot divide by 0 or NaN!");
+    return;
+  }
   const initialResult = currentResult;
   let mathOperator;
   if (calculationType === "ADD") {
